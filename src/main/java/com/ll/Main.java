@@ -36,6 +36,8 @@ class App {
             break;
         }
 
+        System.out.println("1번 명언이 등록되었습니다.");
+
         while ( true ) {
             System.out.print("명령) ");
             String cmd4 = scanner.nextLine();
