@@ -17,10 +17,30 @@ class App {
 
         while ( true ) {
             System.out.print("명령) ");
-
             String cmd = scanner.nextLine();
-            if ( cmd.equals("종료"))
+            if (cmd.equals("등록"))
                 break;
+        }
+
+        while ( true ) {
+            System.out.print("명언 : ");
+            String cmd2 = scanner.nextLine();
+            if (cmd2.equals("현재를 사랑하라."))
+            break;
+        }
+
+        while ( true ) {
+            System.out.print("작가 : ");
+            String cmd3 = scanner.nextLine();
+            if (cmd3.equals("작자미상"))
+            break;
+        }
+
+        while ( true ) {
+            System.out.print("명령) ");
+            String cmd4 = scanner.nextLine();
+            if (cmd4.equals("종료"))
+            break;
         }
 
         scanner.close();
