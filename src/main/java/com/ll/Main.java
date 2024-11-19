@@ -17,11 +17,10 @@ class App {
 
         while ( true ) {
             System.out.print("명령) ");
-            String cmd = scanner.nextLine();
 
-            if ( cmd.equals("종료")) {
+            String cmd = scanner.nextLine();
+            if ( cmd.equals("종료"))
                 break;
-            }
         }
 
         scanner.close();
