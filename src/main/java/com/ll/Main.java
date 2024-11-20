@@ -11,38 +11,26 @@ public class Main {
 
 class App {
     public void run() {
-        System.out.println("== 명언 앱==");
+        System.out.println("== 명언 앱 ==");
 
         Scanner scanner = new Scanner(System.in);
 
-        while ( true ) {
+        int lastId = 0;
+
+        while (true) {
             System.out.print("명령) ");
             String cmd = scanner.nextLine();
-            if (cmd.equals("등록"))
+
+            if (cmd.equals("종료")) {
                 break;
-        }
-
-        while ( true ) {
-            System.out.print("명언 : ");
-            String cmd2 = scanner.nextLine();
-            if (cmd2.equals("현재를 사랑하라."))
-            break;
-        }
-
-        while ( true ) {
-            System.out.print("작가 : ");
-            String cmd3 = scanner.nextLine();
-            if (cmd3.equals("작자미상"))
-            break;
-        }
-
-        System.out.println("1번 명언이 등록되었습니다.");
-
-        while ( true ) {
-            System.out.print("명령) ");
-            String cmd4 = scanner.nextLine();
-            if (cmd4.equals("종료"))
-            break;
+            } else if (cmd.equals("등록")) {
+                System.out.print("명언 : ");
+                String content = scanner.nextLine();
+                System.out.print("작가 : ");
+                String author = scanner.nextLine();
+                int id = ++lastId;
+                System.out.println("%d번 명언이 등록되었습니다.".formatted(id));
+            }
         }
 
         scanner.close();
