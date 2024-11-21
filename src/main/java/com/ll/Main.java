@@ -42,10 +42,8 @@ class App {
                 System.out.println("번호 / 작가 / 명언");
                 System.out.println("----------------------");
 
-                int i = wiseSayings.size() - 1;
-                while (i >= 0) {
+                for (int i = wiseSayings.size() - 1; i >= 0; i--) {
                     System.out.println(wiseSayings.get(i));
-                    i--;
                 }
             }
         }
