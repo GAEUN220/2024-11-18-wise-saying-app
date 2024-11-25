@@ -1,7 +1,5 @@
 package com.ll;
 
-import java.util.Scanner;
-
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -11,36 +9,3 @@ public class Main {
     }
 }
 
-class App {
-    public void run() {
-        System.out.println("== 명언 ==");
-
-        Scanner scanner = new Scanner(System.in);
-
-        int lastId = 0;
-
-        while ( true ) {
-            System.out.print("명령) ");
-
-            String cmd = scanner.nextLine();
-
-            if (cmd.equals("종료")) {
-                break;
-            } else if (cmd.equals("등록")) {
-                System.out.print("명언 : ");
-                String content = scanner.nextLine();
-
-                System.out.print("작가 : ");
-                String author = scanner.nextLine();
-
-                int id = ++lastId;
-
-                System.out.println("%d번 명령이 등록되었습니다.".formatted(id));
-            }
-
-        }
-
-        scanner.close();
-
-    }
-}
