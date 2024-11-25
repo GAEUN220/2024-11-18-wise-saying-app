@@ -30,6 +30,8 @@ class App {
 
                 System.out.print("작가 : ");
                 String author = scanner.nextLine();
+
+                System.out.println("1번 명령이 등록되었습니다.");
             }
 
         }
