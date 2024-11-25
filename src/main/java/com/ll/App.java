@@ -37,7 +37,13 @@ public class App {
                 int id = Integer.parseInt(idStr);
 
                 actionDelete(id);
+            } else if (cmd.startsWith("수정")) {
+                String idStr = cmd.substring(6);
+                int id = Integer.parseInt(idStr);
+
+                actionModify(id);
             }
+
 
         }
 
@@ -76,4 +82,36 @@ public class App {
         if (removed) System.out.println("%d번 명언을 삭제했습니다.".formatted(id));
         else System.out.println("%d번 명언은 존재하지 않습니다.".formatted(id));
     }
+
+    private void actionModify(int id) {
+        WiseSaying foundWiseSaying = null;
+
+        for (WiseSaying wiseSaying : wiseSayings) {
+            if (wiseSaying.getId() == id) {
+                foundWiseSaying = wiseSaying;
+                break;
+            }
+        }
+        if (foundWiseSaying == null) {
+            System.out.println("%d번 명언은 존재하지 않습니다.".formatted(id));
+            return;
+        }
+
+
+        System.out.println("명언(기존) : %s".formatted(foundWiseSaying.getContent()));
+        System.out.print("명언 : ");
+        String content = scanner.nextLine();
+
+        System.out.println("작가(기존) : %s".formatted(foundWiseSaying.getAuthor()));
+        System.out.print("작가 : ");
+        String author = scanner.nextLine();
+
+        foundWiseSaying.setContent(content);
+        foundWiseSaying.setAuthor(author);
+
+        System.out.println("%d번 명언이 수정되었습니다.".formatted(id));
+
+    }
+
+
 }
