@@ -17,6 +17,8 @@ class App {
 
         Scanner scanner = new Scanner(System.in);
 
+        int lastId = 0;
+
         while ( true ) {
             System.out.print("명령) ");
 
@@ -31,7 +33,9 @@ class App {
                 System.out.print("작가 : ");
                 String author = scanner.nextLine();
 
-                System.out.println("1번 명령이 등록되었습니다.");
+                int id = ++lastId;
+
+                System.out.println("%d번 명령이 등록되었습니다.".formatted(id));
             }
 
         }
