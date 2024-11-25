@@ -73,8 +73,7 @@ public class App {
     private void actionDelete(int id) {
         boolean removed = wiseSayings.removeIf(wiseSaying -> wiseSaying.getId() == id);
 
-        if (removed) {
-            System.out.println("%d번 명언을 삭제했습니다.".formatted(id));
-        }
+        if (removed) System.out.println("%d번 명언을 삭제했습니다.".formatted(id));
+        else System.out.println("%d번 명언은 존재하지 않습니다.".formatted(id));
     }
 }
