@@ -3,7 +3,6 @@ package com.ll.domain.wiseSaying.controller;
 import com.ll.domain.wiseSaying.entity.WiseSaying;
 import com.ll.domain.wiseSaying.service.WiseSayingService;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
@@ -23,9 +22,7 @@ public class WiseSayingController {
         System.out.print("작가 : ");
         String author = scanner.nextLine();
 
-       //int id = ++lastId; //없음
-
-        WiseSaying wiseSaying = wiseSayingService.addWiseSaying(content, author);
+        WiseSaying wiseSaying = wiseSayingService.add(content, author);
 
         System.out.println("%d번 명령이 등록되었습니다.".formatted(wiseSaying.getId()));
     }
@@ -57,16 +54,8 @@ public class WiseSayingController {
         String idStr = cmd.substring(6);
         int id = Integer.parseInt(idStr);
 
-        //WiseSaying foundWiseSaying = null; //없음
-
         Optional<WiseSaying> opWiseSaying = wiseSayingService.findById(id);
 
-        //for (WiseSaying wiseSaying : wiseSayings) {
-            //if (wiseSaying.getId() == id) {
-                //foundWiseSaying = wiseSaying;
-                //break;
-            //}
-        //}
         if (opWiseSaying.isEmpty()) {
             System.out.println("%d번 명언은 존재하지 않습니다.".formatted(id));
             return;
@@ -82,15 +71,10 @@ public class WiseSayingController {
         System.out.print("작가 : ");
         String author = scanner.nextLine();
 
-        //foundWiseSaying.setContent(content); //없음
-        //foundWiseSaying.setAuthor(author); //없음
-
         wiseSayingService.modify(foundWiseSaying, content, author);
 
         System.out.println("%d번 명언이 수정되었습니다.".formatted(id));
 
     }
-
-
 
 }
