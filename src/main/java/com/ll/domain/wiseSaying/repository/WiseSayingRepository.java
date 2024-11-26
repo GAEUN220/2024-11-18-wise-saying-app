@@ -6,36 +6,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class WiseSayingRepository {
-    private int lastId;
-    private final List<WiseSaying> wiseSayings;
+public abstract class WiseSayingRepository {
 
-    public WiseSayingRepository() {
-        this.wiseSayings = new ArrayList<>();
-        this.lastId = 0;
-    }
+    public abstract void add(WiseSaying wiseSaying);
 
-    public void add(WiseSaying wiseSaying) {
-        wiseSaying.setId(++lastId);
-        wiseSayings.add(wiseSaying);
-    }
+    public abstract List<WiseSaying> findAll();
 
-    public List<WiseSaying> findAll() {
-        return wiseSayings;
-    }
+    public abstract boolean removeById(int id);
 
-    public boolean removeById(int id) {
-        return wiseSayings.removeIf(e -> e.getId() == id);
-    }
+    public abstract Optional<WiseSaying> findById(int id);
 
-    public Optional<WiseSaying> findById(int id) {
-        return wiseSayings.stream()
-                .filter(e -> e.getId() == id)
-                .findFirst();
-    }
-
-    public void modify(WiseSaying wiseSaying) {
-
-    }
+    public abstract void modify(WiseSaying wiseSaying);
 
 }
