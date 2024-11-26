@@ -6,8 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public abstract class WiseSayingRepository {
-
+public interface WiseSayingRepository {
     public abstract void add(WiseSaying wiseSaying);
 
     public abstract List<WiseSaying> findAll();
